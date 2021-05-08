@@ -4,6 +4,57 @@ $(document).ready(function(){
     loadList();
 })
 
+let Show = false;
+
+
+function hidePainel(name){
+    $(name).hide(3.0);
+}
+
+function offLed(button){
+    $(button).css("background-color","orange"); 
+}
+
+function showPainel(name){
+    $(name).show(3.0);
+}
+
+function onLed(button){
+    $(button).css("background-color","rgb(91, 245, 20)"); 
+}
+
+
+
+function ShowPainel(val){
+    Show = !Show; 
+
+    switch(val){
+        case 0:
+            if(!Show){
+                hidePainel("#prof");
+                offLed("#btnProf");
+            }else{
+                showPainel("#prof");
+                onLed("#btnProf");
+            }
+        break;
+
+        case 1:
+            if(!Show){
+                hidePainel("#divSuporte");
+                offLed("#btnSup");
+            }else{
+                showPainel("#divSuporte");
+                onLed("#btnSup");
+            }
+            
+        break;
+
+    } 
+}
+
+
+
 function loadEquipe(){
     var txt="";
 
@@ -36,11 +87,10 @@ function loadEquipe(){
         txt+='<div style="margin-left="20px"><h3>'+equipe[index]["nome"]+'</h3><p>'+equipe[index]["cargo"]+'</p></div></div>';
     })
 
+    $("#prof").hide(txt);
     $("#prof").html(txt);
+
 }
-
-
-
 
 
 function loadList(){
@@ -52,12 +102,12 @@ function loadList(){
             ];
   var txt ="";
 
-    console.log(list);
 
     $.each(list,function(index){
         txt+='<div class="card"><div class="icon">'+list[index]["icon"]+'</div>'+list[index]["Ordem"]+'</div>';
         txt+='<div class=painel>'+list[index]["descricao"]+'</div>';
     })
    
-   $("#lista_ordem").html(txt);
+   $("#divSuporte").html(txt);
 }
+
