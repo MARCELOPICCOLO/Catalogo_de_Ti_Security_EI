@@ -24,8 +24,8 @@
         <button type="button" id="btnSup" class="but" onClick="ShowPainel(1)"></button>
     </div>
     <hr/>
-    <div id="divSuporte" class="suporte">
-    </div>
+    <div id="divSuporte" class="suporte"></div>
+    
 </div>
 </body>
 </html>

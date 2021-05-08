@@ -5,6 +5,7 @@ $(document).ready(function(){
 })
 
 let Show = false;
+let showDesc = false;
 
 
 function hidePainel(name){
@@ -16,6 +17,7 @@ function offLed(button){
 }
 
 function showPainel(name){
+    console.log(name);
     $(name).show(3.0);
 }
 
@@ -47,12 +49,23 @@ function ShowPainel(val){
                 showPainel("#divSuporte");
                 onLed("#btnSup");
             }
-            
         break;
-
     } 
 }
 
+
+function onOffDesc(val){
+ 
+    showDesc = !showDesc;
+    console.log(showDesc);
+   
+    if(!showDesc){
+        $('#d'+val+'').hide();
+    }
+    else{
+        
+    }
+}
 
 
 function loadEquipe(){
@@ -94,20 +107,37 @@ function loadEquipe(){
 
 
 function loadList(){
-  var list = [{"Ordem" : "Suporte Técnico",
+  var list = [{
+               "Ordem" : "Manutenção de Equipamentos",
                "icon"  : '<i class="fas fa-tools" style="font-size:36px"></i>',
-               "descricao"  : 'lorem ...............................',
+               "descricao"  : 'lorem aaaaaaaa......................',
                "permitidos" : "aaaa",
-              }
+              },
+              {
+                "Ordem" : "Atualização de softwares",
+                "icon"  : '<i class="fas fa-redo-alt" style="font-size:36px"></i>',
+                "descricao"  : 'lorem .bbbbbbb.........................',
+                "permitidos" : "aaaa",
+              },
+              {
+                "Ordem" : "Configuração de rede",
+                "icon"  : '<i class="fas fa-wifi" style="font-size:36px"></i>',
+                "descricao"  : 'lorem ..ccccccc........................',
+                "permitidos" : "aaaa",
+              },
+
             ];
+
   var txt ="";
-
-
+ 
     $.each(list,function(index){
-        txt+='<div class="card"><div class="icon">'+list[index]["icon"]+'</div>'+list[index]["Ordem"]+'</div>';
-        txt+='<div class=painel>'+list[index]["descricao"]+'</div>';
+        txt+='<div class="card2"><div style="display:flex"><div class="icon">'+list[index]["icon"]+'</div>'+list[index]["Ordem"]+'</div>';
+        txt+='<button type="button" id="d'+index+'" onclick="onOffDesc(this.id)">Exibir </button>';
+        txt+='<hr/>';
+        txt+='<div id="dd'+index+'" class=painel><pre>'+list[index]["descricao"]+'</div></div>';   
     })
-   
+
    $("#divSuporte").html(txt);
 }
+
 
