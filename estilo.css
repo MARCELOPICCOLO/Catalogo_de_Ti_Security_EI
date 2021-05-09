@@ -97,3 +97,12 @@
     cursor: pointer;
    
 }
+
+@media screen and (max-width:800px){
+    .barra-titulos{
+        font-size: 1.2rem;
+    }
+    h3{
+        size:1rem
+    }
+}

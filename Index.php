@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catálogo de TI da Security E&I</title>
-    <link rel="stylesheet" type="text/css" href="./estilo.css?v=5"/>
+    <link rel="stylesheet" type="text/css" href="./estilo.css?v=6"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
@@ -28,6 +28,12 @@
     </div>
     <hr/>
     <div id="divPC" class="suporte"></div>
+
+    <div class="barra-titulos">Segurança da Informação
+        <button type="button" id="btnSg" class="but" onClick="ShowPainel(3)"></button>
+    </div>
+    <hr/>
+    <div id="divSeg" class="suporte"></div>
     
 </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
