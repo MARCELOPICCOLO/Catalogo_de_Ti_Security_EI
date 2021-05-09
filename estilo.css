@@ -2,7 +2,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
+
 
 .container{
     max-width: 1200px;
@@ -12,12 +14,12 @@
 }
 
 .card{
-    border:1px solid #ccc;
-    width: 22rem;
+   
+    width: 25rem;
     display: flex;
     margin: 10px;
     padding: 10px;
-    border-radius: 10px;
+    
     display: flex;
     justify-content: space-around;
     text-align: center;
@@ -26,26 +28,32 @@
 }
 
 .card2{
-    border:1px solid #ccc;
-    width: 33rem;
-    margin: 10px;
+   
+    width: 20rem;
+    margin: 20px ;
     padding: 10px;
+    border: 1px solid #ccc;
     border-radius: 10px;
-    justify-content: space-around;
     text-align: center;
     align-items: center;
+    justify-content: space-between;
+    z-index: 999;
+    color:#555;
 
 }
+
 .suporte{
     margin: 30px auto;
     padding: 10px;
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: flex-start;
+    justify-content: start;
+
 }
 
 .icon{
-    border: 4px solid black;
+    border: 4px solid #555;
     justify-content: center;
     align-items: center;
     border-radius: 12%;
@@ -54,20 +62,18 @@
 
 .painel{
     width: 100%;
-}
-
-img{
-    width:90px;
-    height: 90px;
+    text-align: justify;
+    padding-top: 10px;
 }
 
 .profis{
+    width: 75%;
     margin: 30px auto;
     padding: 10px;
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: space-between;
 }
 
 .barra-titulos{
@@ -91,4 +97,3 @@ img{
     cursor: pointer;
    
 }
-
