@@ -1,20 +1,105 @@
-$(document).ready(function(){
 
-    loadEquipe();
-    loadList();
-    lodPleContinue();
-    loadSecurity();
-    hidePainelsOrdens();
-});
+
+var suporte = [{
+    "Ordem" : "Manutenção de Equipamentos",
+    "icon"  : '<i class="fas fa-tools" style="font-size:36px"></i>',
+    "descricao"  : 'Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.',
+    "permitidos" : "aaaa",
+   },
+   {
+     "Ordem" : "Atualização de softwares",
+     "icon"  : '<i class="fas fa-redo-alt" style="font-size:36px"></i>',
+     "descricao"  : 'lorem .bbbbbbb.........................',
+     "permitidos" : "aaaa",
+   },
+   {
+     "Ordem" : "Configuração de rede",
+     "icon"  : '<i class="fas fa-wifi" style="font-size:36px"></i>',
+     "descricao"  : 'lorem ..ccccccc........................',
+     "permitidos" : "aaaa",
+   },
+   {
+     "Ordem" : "Instalar softwares",
+     "icon"  : '<i class="fas fa-cubes" style="font-size:36px"></i>',
+     "descricao"  : 'lorem ..ccccccc........................',
+     "permitidos" : "aaaa",
+   },
+
+ ];
+
+ var plain = [
+    {
+        "Ordem" : "Realizar Backup",
+        "icon"  : '<i class="fas fa-database" style="font-size:36px"></i>',
+        "descricao"  : 'Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.',
+        "permitidos" : "aaaa",                  
+
+    },
+    {
+        "Ordem" : "Centralizar em Nuvem",
+        "icon"  : '<i class="fas fa-cloud" style="font-size:36px"></i>',
+        "descricao"  : 'Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.',
+        "permitidos" : "aaaa",                  
+
+    },
+    {
+        "Ordem" : "Estruturar Datacenter",
+        "icon"  : '<i class="fas fa-server" style="font-size:36px"></i>',
+        "descricao"  : 'Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.',
+        "permitidos" : "aaaa",                  
+
+    },
+
+];
+
+var security = [
+    {
+        "Ordem" : "Configurar Firewall",
+        "icon"  : '<i class="fas fa-shield-alt" style="font-size:36px"></i>',
+        "descricao"  : 'Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.',
+        "permitidos" : "aaaa",                  
+
+    },
+    {
+        "Ordem" : "Passar Anti-vírus",
+        "icon"  : '<i class="fas fa-bug" style="font-size:36px"></i>',
+        "descricao"  : 'Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.',
+        "permitidos" : "aaaa",                  
+
+    },
+    {
+        "Ordem" : "Gerenciar Acessos a rede",
+        "icon"  : '<i class="fas fa-exclamation-triangle" style="font-size:36px"></i>',
+        "descricao"  : 'Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.',
+        "permitidos" : "aaaa",                  
+
+    },
+
+
+];
 
 /**
  *  show = ativa e desativa os paineis de ordens
  *  showDesc = ativa e dessativa os paines de descrição das ordens
  *  states = guarda o estado de cada botao dos paineis 
  */
-let Show = false;
-let showDesc = false;
-let states = [false,false,false,false];
+ let Show = false;
+ let showDesc = false;
+ let states = [false,false,false,false];
+
+$(document).ready(function(){
+    Initialize();
+});
+
+function Initialize(){
+    loadEquipe();
+    loadPainels(suporte,"#divSuporte","d");
+    loadPainels(plain,"#divPC","c");
+    loadPainels(security,"#divSeg","e");
+
+    hidePainelsOrdens();
+}
+
 
 /** esconde o painel com as ordens 
  *  name = o nome da div a ser exibida ex = #prof
@@ -154,141 +239,29 @@ function loadEquipe(){
 
 }
 
-/** Carrega painel de Suporte Técninco */
 
 
-function loadList(){
-  var list = [{
-               "Ordem" : "Manutenção de Equipamentos",
-               "icon"  : '<i class="fas fa-tools" style="font-size:36px"></i>',
-               "descricao"  : 'Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.',
-               "permitidos" : "aaaa",
-              },
-              {
-                "Ordem" : "Atualização de softwares",
-                "icon"  : '<i class="fas fa-redo-alt" style="font-size:36px"></i>',
-                "descricao"  : 'lorem .bbbbbbb.........................',
-                "permitidos" : "aaaa",
-              },
-              {
-                "Ordem" : "Configuração de rede",
-                "icon"  : '<i class="fas fa-wifi" style="font-size:36px"></i>',
-                "descricao"  : 'lorem ..ccccccc........................',
-                "permitidos" : "aaaa",
-              },
-              {
-                "Ordem" : "Instalar softwares",
-                "icon"  : '<i class="fas fa-cubes" style="font-size:36px"></i>',
-                "descricao"  : 'lorem ..ccccccc........................',
-                "permitidos" : "aaaa",
-              },
+/**carrega o painel de soluções
+ * List = array com as jsons das ordens de serviço
+ * nameDiv = a div que sera atribuida os dados pelo js
+ * varIndeitfy = é a vogal identificador da da div exempo c1, cc1, d1, dd1
+*/
 
-            ];
-
-  var txt ="";
- 
-    $.each(list,function(index){
-        txt+='<div class="card2"><div style="display:flex; justify-content:space-between;align-items:center"><div class="icon">'+list[index]["icon"]+'</div><h3>'+list[index]["Ordem"]+'</h3></div>';
-        txt+='<div" id="d'+index+'" style="background-color=#ccc"; width:100%; cursor:pointer" onclick="onOffDesc(this.id)"> <i class="fas fa-angle-down" style="font-size:24px"></i>';
-        txt+='<hr/>';
-        txt+='<div id="dd'+index+'" class=painel>'+list[index]["descricao"]+'</div></div>';   
-    })
-
-   $("#divSuporte").html(txt);
-   hidePainels(`d`,list);
-}
-
-/**Carrega o painel com os Planos de Continuidade **/
-
-function lodPleContinue(){
+function loadPainels(list,nameDiv,varIdentify){
     var txt="";
-    var list = [
-                    {
-                        "Ordem" : "Realizar Backup",
-                        "icon"  : '<i class="fas fa-database" style="font-size:36px"></i>',
-                        "descricao"  : 'Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.',
-                        "permitidos" : "aaaa",                  
 
-                    },
-                    {
-                        "Ordem" : "Acessar a Extranet",
-                        "icon"  : '<i class="fas fa-globe" style="font-size:36px"></i>',
-                        "descricao"  : 'Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.',
-                        "permitidos" : "aaaa",                  
-
-                    },
-                    {
-                        "Ordem" : "Centralizar em Nuvem",
-                        "icon"  : '<i class="fas fa-cloud" style="font-size:36px"></i>',
-                        "descricao"  : 'Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.',
-                        "permitidos" : "aaaa",                  
-
-                    },
-                    {
-                        "Ordem" : "Estruturar Datacenter",
-                        "icon"  : '<i class="fas fa-server" style="font-size:36px"></i>',
-                        "descricao"  : 'Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.',
-                        "permitidos" : "aaaa",                  
-
-                    },
-            
-            ];
-
-    
     $.each(list,function(index){
-        txt+='<div class="card2"><div style="display:flex; justify-content:space-between;align-items:center; padding: 10px 20px"><div class="icon">'+list[index]["icon"]+'</div><h3>'+list[index]["Ordem"]+'</h3></div>';
-        txt+='<div" id="c'+index+'" style="background-color=#ccc"; width:100%; cursor:pointer" onclick="onOffDesc(this.id)"> <i class="fas fa-angle-down" style="font-size:24px"></i>';
+        txt+='<div class="card2"><div class="divImgTitle"><div class="icon">'+list[index]["icon"]+'</div><h3>'+list[index]["Ordem"]+'</h3></div>';
+        txt+='<div" id="'+varIdentify+index+'" class="buttonDesc"  onclick="onOffDesc(this.id)"> <i class="fas fa-angle-down" style="font-size:24px"></i>';
         txt+='<hr/>';
-        txt+='<div id="cc'+index+'" class=painel>'+list[index]["descricao"]+'</div></div>';  
+        txt+='<div id="'+varIdentify+varIdentify+index+'" class=painel>'+list[index]["descricao"]+'</div></div>';  
     })
-    $("#divPC").html(txt);
+    $(nameDiv).html(txt);
 
-    hidePainels(`c`,list);
+    hidePainels(varIdentify,list);
+
 
 }
-/** carrega paineis de segurança da informação */
-function loadSecurity(){
-
-    var txt="";
-    var list = [
-                    {
-                        "Ordem" : "Configurar Firewall",
-                        "icon"  : '<i class="fas fa-shield-alt" style="font-size:36px"></i>',
-                        "descricao"  : 'Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.',
-                        "permitidos" : "aaaa",                  
-
-                    },
-                    {
-                        "Ordem" : "Passar Anti-vírus",
-                        "icon"  : '<i class="fas fa-bug" style="font-size:36px"></i>',
-                        "descricao"  : 'Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.',
-                        "permitidos" : "aaaa",                  
-
-                    },
-                    {
-                        "Ordem" : "Gerenciar Acessos a rede",
-                        "icon"  : '<i class="fas fa-exclamation-triangle" style="font-size:36px"></i>',
-                        "descricao"  : 'Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.',
-                        "permitidos" : "aaaa",                  
-
-                    },
-          
-            
-            ];
-
-    
-    $.each(list,function(index){
-        txt+='<div class="card2"><div style="display:flex; justify-content:space-between;align-items:center; padding: 10px 20px"><div class="icon">'+list[index]["icon"]+'</div><h3>'+list[index]["Ordem"]+'</h3></div>';
-        txt+='<div" id="e'+index+'" style="background-color=#ccc"; width:100%; cursor:pointer" onclick="onOffDesc(this.id)"> <i class="fas fa-angle-down" style="font-size:24px"></i>';
-        txt+='<hr/>';
-        txt+='<div id="ee'+index+'" class=painel>'+list[index]["descricao"]+'</div></div>';  
-    })
-    $("#divSeg").html(txt);
-
-    hidePainels(`e`,list);
-
-}
-
 
 
 /***** Percorre a lista escondendo as div que contém as descrição das ordems de serviço
