@@ -27,6 +27,11 @@
 
 }
 
+.card > div > h3{
+    font-size: 1.5rem;
+
+}
+
 .card2{
    
     width: 20rem;
@@ -65,9 +70,18 @@
 
 .painel{
     width: 100%;
-    text-align: justify;
+    text-align: left;
     padding-top: 10px;
 }
+
+.painel > p{
+    font-size: 1.5rem;
+}
+
+.painel > li{
+    font-size: 1.5rem;
+}
+
 
 .profis{
     width: 75%;
@@ -120,4 +134,39 @@
     justify-content:space-between;
     align-items:center; 
     padding: 10px 20px;
+
+}
+
+.banner{
+    display: flex;
+    background-color:rgb(66, 65, 65); 
+    height: 150px;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.banner > h1{
+    color: rgb(206, 194, 85);
+    margin-left: 50px;
+}
+
+.footer{
+    margin-top: 50px;
+    background-color:rgb(92, 89, 89); 
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    
+}
+
+.footer > li{
+    color: rgb(255, 255, 255);
+    font-size: 1.5rem;
+    list-style: none;
+    margin: 20px 20px;
+}
+
+p {
+    font-size: 1rem;
 }
