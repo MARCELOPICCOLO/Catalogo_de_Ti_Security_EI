@@ -3,97 +3,30 @@
 var suporte = [{
     "Ordem" : "Manutenção de Equipamentos",
     "icon"  : '<i class="fas fa-tools" style="font-size:36px"></i>',
-    "descricao"  : '<p>Por motivo de segurança, a TI ficará a cargo de prestar manutenção nos equipamentos internos descrito nos itens:'
-                    + '<li>Trocar todas as placas e dispositivos</li><li>Instalar novos equipamentos</li></p>',
+    "descricao"  : '<p> esta ordem de serviço deve ser acionada em caso de defeitos no equipamento como:'
+                    +'mau funcionamento, queima, travamento, ruídos internos e outros.., para aciona-lo, o usuário'
+                    +' deverá abrir uma ordem de serviço descrevendo nome de quem está solicitando, departamento'
+                    +' e descrição prévia do defeito, onde a mesma será encaminhada para o departmaneto de TI'
+                    + '</p>',
                     
-    "permitidos" : "Técnico de Informática",
    },
    {
-     "Ordem" : "Atualização de softwares",
+     "Ordem" : "instalação e atualização de softwares",
      "icon"  : '<i class="fas fa-redo-alt" style="font-size:36px"></i>',
-     "descricao"  : '<p>Fica a cargo da TI atualizar os softwares e licenças dos softwares internos.</p>',
-     "permitidos" : "Técnico de Informática",
+     "descricao"  : '<p>Para instalar um sofetware ou atualizar, deverá ser encaminhada uma ordem de serviço'
+     +'preenchendo o formulário conforme o modelo abaixo com nome do usuário, departamento e descrição do software a ser instalado</p>',
+     
    },
    {
-     "Ordem" : "Configuração de rede",
-     "icon"  : '<i class="fas fa-wifi" style="font-size:36px"></i>',
-     "descricao"  : '<p>Fica a cargo da Ti todo o gerenciamento da comunicação interna a cooporação como:'
-                    +'<li>Configurar endereço dos equipamentos na rede</li><li>Adicionar ou remover equipamentos</p></li>',
-     "permitidos" : "Técnico de Informática",
-   },
-   {
-     "Ordem" : "Instalar softwares",
-     "icon"  : '<i class="fas fa-cubes" style="font-size:36px"></i>',
-     "descricao"  : '<p>Para garantir a segurança da coorporações, deverá ser utilizado softwares originais</p>',
-     "permitidos" : "Técnico de Informática",
-   },
-
+    "Ordem" : "Recuperar Backup",
+    "icon"  : '<i class="fas fa-database" style="font-size:36px"></i>',
+    "descricao"  : '<p>Os backups são realizados todo dia após o término do expediente, sendo possível recuperar todos os dados do dia anterior'
+    +'para recuperar um bkup deverá ser encaminhada uma ordem ao departamento de Ti conforme modelo abaixo com nome do usuário, departamento e descrição do prblema</p>',                      
+},
+ 
  ];
 
- var plain = [
-    {
-        "Ordem" : "Realizar Backup",
-        "icon"  : '<i class="fas fa-database" style="font-size:36px"></i>',
-        "descricao"  : '<p>A Ti deverá realizar o backup diariamente após o término do expediente, o backup deverá ser guardado em mídias não volatéis e armazenamento em nuvens</p>',
-        "permitidos" : "DBA, analistas",                  
-
-    },
-    {
-        "Ordem" : "Centralizar em Nuvem",
-        "icon"  : '<i class="fas fa-cloud" style="font-size:36px"></i>',
-        "descricao"  : '<p>O sistema central deverá estar centralizado nas nuvens cabendo a Ti garantir a segurança e funcionamento</p>.',
-        "permitidos" : "TI em geral",                  
-
-    },
-    {
-        "Ordem" : "Estruturar Datacenter",
-        "icon"  : '<i class="fas fa-server" style="font-size:36px"></i>',
-        "descricao"  : '<p>A Ti cuidará da segurança dos dados coletados, o banco de dados deverá seguir os itmens:'
-                    + '<li>Estar configurado em um local seguro a acidentes naturais</li><li>conter dispositivo anti-chamas</li><li>possír cópias de segurança armazenado em nuvem</p></li>',
-        "permitidos" : "TI em geral",                  
-
-    },
-
-];
-
-var security = [
-    {
-        "Ordem" : "Configurar Firewall",
-        "icon"  : '<i class="fas fa-shield-alt" style="font-size:36px"></i>',
-        "descricao"  : '<p>Cabe a TI zelar pela segurança da comeunicação da coorporação, onde deverá proteger os equipamentos com firewall e anti malwares.</p>',
-        "permitidos" : "CSO, analistas",                  
-
-    },
-    {
-        "Ordem" : "Passar Anti-vírus",
-        "icon"  : '<i class="fas fa-bug" style="font-size:36px"></i>',
-        "descricao"  : '<p>Cabe a TI garantir a segurança dos equipamentos da coorporação, seguindo os itens:'
-                       +'<li>Passar anti-virus 2 vezes por semanas em horários agendados</li><li>Passar anti-virus em todas as mídias não volatés</li></p>',
-        "permitidos" : "Analistas, técnico",                  
-
-    },
-    {
-        "Ordem" : "Gerenciar Acessos a rede",
-        "icon"  : '<i class="fas fa-exclamation-triangle" style="font-size:36px"></i>',
-        "descricao"  : '<p>A Ti deverá cuidar dos acessos realizados internamente, permitindo ou restringindo acessos por meio de colaboradores</p>',
-        "permitidos" : "CSO",                  
-
-    },
-
-
-];
-
-var solutions = [
-    {
-        "Ordem" : "Implantar novas soluções",
-        "icon"  : '<i class="fas fa-lightbulb" style="font-size:36px"></i>',
-        "descricao"  : '<p>A TI deverá ficar a cargo das necessidades da coorporação, e responsabilizará por:'
-                    +  '<li>levantar requisitos</li><li>Projetar novas soluções</li><li>Desenvoler e Implantar projetos<p></li>',
-        "permitidos" : "TI em geral",                  
-    },
-
-];
-
+ 
 /**
  *  show = ativa e desativa os paineis de ordens
  *  showDesc = ativa e dessativa os paines de descrição das ordens
@@ -110,9 +43,6 @@ $(document).ready(function(){
 function Initialize(){
     loadEquipe();
     loadPainels(suporte,"#divSuporte","a");
-    loadPainels(plain,"#divPC","b");
-    loadPainels(security,"#divSeg","c");
-    loadPainels(solutions,"#divSol","d");
 
     hidePainelsOrdens();
 }
@@ -265,8 +195,13 @@ function loadEquipe(){
                 
                 
     $.each(equipe, function(index){
-        txt+='<div class="card"><img src="./Assets/'+equipe[index]["foto"]+'"  style="width:100px; height:100px; border-radius: 50%">';
-        txt+='<div style="margin-left="20px"><h3>'+equipe[index]["nome"]+'</h3><p style="font-size:1.2rem">'+equipe[index]["cargo"]+'</p></div></div>';
+        txt+='<div style="display:flex; text-align:center; justify-content: space-around; margin:20px 20px;width:20rem; padding:10px">'
+            +'<img src="./Assets/'+equipe[index]["foto"]+'"  style="width:100px; height:100px; border-radius: 50%">'
+            +'<div style="margin-left="20px">'
+            +'<h3>'+equipe[index]["nome"]+'</h3>'
+            +'<p style="font-size:1.2rem">'+equipe[index]["cargo"]+'</p>'
+            +'</div>'
+            +'</div>';
     })
 
     $("#prof").hide(txt);
@@ -289,8 +224,8 @@ function loadPainels(list,nameDiv,varIdentify){
         txt+='<div class="card2"><div class="divImgTitle"><div class="icon">'+list[index]["icon"]+'</div><h3>'+list[index]["Ordem"]+'</h3></div>';
         txt+='<div" id="'+varIdentify+index+'" class="buttonDesc"  onclick="onOffDesc(this.id)"> <i class="fas fa-angle-down" style="font-size:24px"></i>';
         txt+='<hr/>';
-        txt+='<div id="'+varIdentify+varIdentify+index+'" class=painel>'+list[index]["descricao"]+'</div>'
-              +'<p style="margin-top:10px"> Autorizado : '+list[index]["permitidos"]+'</div>';  
+        txt+='<div id="'+varIdentify+varIdentify+index+'" class=painel>'+list[index]["descricao"]+'</div></div>';
+           
     })
     $(nameDiv).html(txt);
 
@@ -316,7 +251,5 @@ function hidePainels(val,list){
 function hidePainelsOrdens(){
     $("#prof").hide();
     $("#divSuporte").hide();
-    $("#divSeg").hide();
-    $("#divPC").hide();
-    $("#divSol").hide();
+
 }
